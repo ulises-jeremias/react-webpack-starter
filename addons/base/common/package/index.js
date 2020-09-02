@@ -41,7 +41,7 @@ module.exports = function resolvePackage(setup, { appName, command }) {
         }
       },
       "lint-staged": {
-        "*.(js|jsx|ts)": ["yarn lint:fix", "git add"]
+        "*.(js|jsx|ts|tsx)": ["yarn lint:fix", "git add"]
       }
   }
 
