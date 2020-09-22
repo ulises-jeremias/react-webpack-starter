@@ -1,22 +1,17 @@
 module.exports = function resolvePackage(setup) {
   const dependencies = [
-    'connected-react-router',
-    'history@4.7.2',
-    'react-redux',
-    'redux',
-    'redux-form',
-    'redux-logger',
-    'redux-persist',
-    'redux-thunk',
+    'redux-form-saga',
+    'redux-saga',
   ]
 
-  const devDependencies = [
-    'redux-mock-store',
-  ]
+  const devDependencies = []
 
   return {
     ...setup,
     dependencies: [...setup.dependencies, ...dependencies],
-    devDependencies: [...setup.devDependencies, ...devDependencies],
+    devDependencies: [
+      ...setup.devDependencies.filter((dep) => dep !== 'redux-thunk'),
+      ...devDependencies,
+    ],
   }
 }

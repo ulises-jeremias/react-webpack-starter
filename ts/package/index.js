@@ -1,11 +1,7 @@
 module.exports = function resolvePackage(setup) {
   const dependencies = []
 
-  const devDependencies = [
-    '@types/redux-form',
-    '@types/redux-logger',
-    '@types/react-redux',
-  ]
+  const devDependencies = []
 
   return {
     ...setup,
