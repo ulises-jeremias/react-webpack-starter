@@ -1,20 +1,14 @@
 module.exports = function resolvePackage(setup) {
   const dependencies = [
-    'semantic-ui-less',
-    'semantic-ui-react',
+    '@material-ui/core',
+    '@material-ui/icons',
   ]
 
-  const devDependencies = [
-    'less@2.7.3',
-    'less-loader@^5.0.0',
-  ]
+  const devDependencies = []
 
   return {
     ...setup,
     dependencies: [...setup.dependencies, ...dependencies],
-    devDependencies: [
-      ...setup.devDependencies.filter((dep) => dep !== "less" && dep !== "less-loader"),
-      ...devDependencies
-    ],
+    devDependencies: [...setup.devDependencies, ...devDependencies],
   }
 }
