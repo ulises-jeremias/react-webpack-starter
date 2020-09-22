@@ -1,8 +1,6 @@
 import React from 'react';
-import { Spin } from 'antd';
-import { LoadingOutlined } from '@ant-design/icons';
+import Spinner from 'react-bootstrap/Spinner';
 
-const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />;
-const Loading = () => <Spin indicator={antIcon} />;
+const Loading = () => <Spinner animation="border" />;
 
 export default Loading;

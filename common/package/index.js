@@ -1,7 +1,7 @@
 module.exports = function resolvePackage(setup) {
   const dependencies = [
-    'antd',
-    '@ant-design/icons',
+    'react-bootstrap',
+    'bootstrap',
   ]
 
   const devDependencies = []
