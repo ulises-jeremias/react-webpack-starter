@@ -1,1 +1,1 @@
-import 'bootstrap/scss/bootstrap.scss';
+import './semantic-ui/semantic.less';

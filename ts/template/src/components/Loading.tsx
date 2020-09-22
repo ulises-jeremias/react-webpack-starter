@@ -1,6 +1,6 @@
 import React from 'react';
-import Spinner from 'react-bootstrap/Spinner';
+import { Dimmer, Loader } from 'semantic-ui-react';
 
-const Loading = () => <Spinner animation="border" />;
+const Loading = () => <Dimmer inverted active><Loader /></Dimmer>;
 
 export default Loading;
