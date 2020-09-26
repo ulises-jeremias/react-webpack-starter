@@ -1,3 +1,7 @@
+# ARCHIVED
+
+This project was moved to [create-react-webpack-app](https://github.com/Create-Node-App/create-react-webpack-app).
+
 # React + Webpack Starter
 
 [![Build Status](https://github.com/ulises-jeremias/react-webpack-starter/workflows/Build/badge.svg)](https://github.com/ulises-jeremias/react-webpack-starter/commits/master)
