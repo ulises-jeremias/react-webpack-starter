@@ -5,8 +5,8 @@ const chalk = require('chalk');
 const envinfo = require('envinfo');
 
 const packageJS = require('./package.json');
-const { createApp } = require('./src/install-functions');
-const { toCamelCase } = require('./src/helpers-functions');
+const { createApp } = require('./src/install');
+const getAddons = require('./src/addons');
 
 let projectName;
 
@@ -32,7 +32,9 @@ program
   .option('--material-ui', 'add material ui setup with SVG icons')
   .option('--semantic-ui', 'add semantic ui and semantic ui react setup with theme config')
   .option('--docker', 'generate dockerfiles')
-  .option('--android', 'generates android setup using ionic react and capacitor')
+  .option('--android-tools', 'generate dockerfiles with android tools to perform android emulation, testing and apk generation.')
+  .option('--ionic', 'generates cross-platform setup using ionic react and capacitor')
+  .option('--extend <repos>', 'git repositories to extend your boilerplate')
   .option('-a, --alias <alias>', 'webpack alias', 'app')
   .option('--nodeps', 'generate package.json file without installing dependencies')
   .option('--inplace', 'apply setup to an existing project')
@@ -75,36 +77,7 @@ if (typeof projectName === 'undefined') {
   process.exit(1);
 }
 
-const lang = program.typescript ? 'ts' : 'es';
-const langAddons = [
-  'redux',
-  'saga',
-  'recoil',
-  'ant-design',
-  'bootstrap',
-  'material-ui',
-  'semantic-ui',
-];
-
-// initialized with base template
-let addons = ['base/common', `base/${lang}`];
-
-langAddons.forEach((addon) => {
-  if (program[toCamelCase(addon)]) {
-    addons.push(`${addon}/common`);
-    addons.push(`${addon}/${lang}`);
-  }
-});
-
-if (program.android) {
-  addons.push('android');
-}
-if (program.docker) {
-  addons.push('docker/web');
-  if (program.android) {
-    addons.push('docker/android');
-  }
-}
+const addons = getAddons(program);
 
 createApp(
   projectName,
