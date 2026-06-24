@@ -1,6 +1,7 @@
 # ARCHIVED
 
 This project was moved to [create-react-webpack-app](https://github.com/Create-Node-App/create-react-webpack-app).
+For maintained Create Node App projects, visit [Create-Node-App](https://github.com/Create-Node-App).
 
 # React + Webpack Starter
 
